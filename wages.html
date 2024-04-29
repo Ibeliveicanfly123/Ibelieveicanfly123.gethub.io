@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Earnings Insight</title>
+        <style>
+            body {
+                background-color: #1F2937;
+                color: #D1D5DB;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+        <script>
+            function visualizeData() {
+                let earningsChart = new CanvasJS.Chart("earningsChartContainer", {
+                    theme: "dark2",
+                    animationEnabled: false,
+                    title:{
+                        text: "Percentage of Unpaid Earned Wages"
+                    },
+                    axisX: {
+                        title: "State"
+                    },
+                    axisY: {
+                            title: "Percentage unpaid",
+                            minimum: 0
+                        },
+                    data: [
+                    {
+                        type: "column",
+                        dataPoints: [
+                            {label: "California", y: 22.3},
+                            {label: "Florida", y: 20.1},
+                            {label: "Georgia", y: 25.9},
+                            {label: "Illinois", y: 20.6},
+                            {label: "Michigan", y: 27.3},
+                            {label: "New York", y: 22.8},
+                            {label: "North Carolina", y: 28.8},
+                            {label: "Ohio", y: 22.4},
+                            {label: "Pennsylvania", y: 32.9},
+                            {label: "Texas", y: 31.7}
+                        ],
+                        yValueFormatString: "##.#\"%\"",
+                    }
+                    
+                    ]
+                });
+                earningsChart.render();
+            }
+        </script>
+    </head>
+    <body onload="visualizeData()" >
+        <div id="earningsChartContainer" style="height: 370px; width: 100%;"></div>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <p> Wage underpayment encompasses actions where workers receive less compensation than they are entitled to based on their stipulated wage for the hours they've worked, including violations of overtime pay regulations. A substantial proportion of minimum wage workers encounter wage underpayment, as depicted in the graph above for the top ten most populous states in the US. The victims of wage underpayment are typically individuals already facing socio-economic challenges. As indicated in the article, "women, who are initially paid less, suffer even more after their wages are unlawfully withheld." Wage underpayment disproportionately affects women, younger individuals, people of color, non-US citizens, and unmarried individuals. It predominantly affects those who are already financially vulnerable. The service industry, particularly food and beverage service, is the most common sector for wage underpayment. The process of reclaiming unpaid wages is excessively cumbersome, making it exceedingly difficult for individuals to retrieve their rightfully earned money from employers. Furthermore, when employers are caught engaging in wage underpayment, the penalties are minimal, effectively incentivizing such practices. This situation underscores the importance of unions in combating wage underpayment; workers who are not part of unions are roughly twice as likely to experience wage underpayment compared to unionized workers. To mitigate wage underpayment, or at least alleviate its impact on affected individuals, federal minimum wage should be increased, and stringent laws pertaining to wage underpayment should be enacted and enforced.</p>
+    </body>
+</html>
